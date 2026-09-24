@@ -97,7 +97,7 @@ func TestRandomQueryString(t *testing.T) {
 	// Target carries an existing query parameter that must be preserved.
 	target := ts.URL + "/?existing=keep"
 
-	for i := 0; i < 2; i++ {
+	for i := range 2 {
 		registry := prometheus.NewRegistry()
 		testCTX, cancel := context.WithTimeout(context.Background(), 10*time.Second)
 		defer cancel()
